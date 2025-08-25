@@ -19,5 +19,19 @@
     "date": "2025-08-25",
     "description": "qwe",
     "type": "income"
+  },
+  {
+    "amount": "135000",
+    "category": "help",
+    "date": "2025-08-25",
+    "description": "help me",
+    "type": "income"
+  },
+  {
+    "amount": "98650",
+    "category": "book",
+    "date": "2025-08-25",
+    "description": "reading book",
+    "type": "expense"
   }
 ]

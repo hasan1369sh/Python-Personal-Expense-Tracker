@@ -1,4 +1,4 @@
-from finance.transaction import TransactionList
+from finance.transaction_list import TransactionList
 def menu():
     print('_____ MENU _____')
     print('\n1. Record Income')

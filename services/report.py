@@ -1,4 +1,4 @@
-from . import filter
+from .filter import filtered_item
 from matplotlib import pyplot as plt
 import numpy as np
 
@@ -11,7 +11,7 @@ def get_report(self, time_frame, category_selected):
     average_daily_spending = 0
     savings_percentage = 0
     total_expenses_for_category = 0
-    result = filter.filtered_item(self, time_frame)
+    result = filtered_item(self, time_frame)
     if len(result) == 0:
         print('\nNot Found !!!')
         return False
