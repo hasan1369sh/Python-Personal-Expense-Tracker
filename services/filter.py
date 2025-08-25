@@ -4,6 +4,7 @@ def filtered_item(self, time_frame):
     now = datetime.datetime.now()
     today_date = now.date()
     result = []
+
     try:
         if time_frame == 'today':
             for transaction in self.transactions:
@@ -12,7 +13,6 @@ def filtered_item(self, time_frame):
                     result.append(transaction)
 
         elif time_frame == 'current week':
-            # شروع هفته: دوشنبه هفته جاری
             start_of_week = now - datetime.timedelta(days=now.weekday())
             start_of_week = start_of_week.replace(hour=0, minute=0, second=0, microsecond=0)
             end_of_week = now
@@ -32,8 +32,10 @@ def filtered_item(self, time_frame):
                     result.append(transaction)
 
         elif time_frame == 'range':
-            from_str = input('From Date (YYYY-MM-DD): ')
-            to_str = input('To Date (YYYY-MM-DD): ')
+            print("\n📅 Enter date range (format: YYYY-MM-DD)")
+            from_str = input("📥 From date: ").strip()
+            to_str = input("📤 To date: ").strip()
+
             from_date = datetime.datetime.strptime(from_str, '%Y-%m-%d')
             to_date = datetime.datetime.strptime(to_str, '%Y-%m-%d')
             to_date = to_date.replace(hour=23, minute=59, second=59)
@@ -44,10 +46,15 @@ def filtered_item(self, time_frame):
                     result.append(transaction)
 
         else:
-            print("❌ Invalid time frame.")
+            print("❌ Invalid time frame selected. Please choose a valid option.")
+            return []
+
+    except ValueError as e:
+        print("❌ Invalid date format. Please use YYYY-MM-DD.")
+        print("💡 Example: 2025-04-05")
+        return []
     except Exception as e:
-        print(f"❌ Error in filtering: {e}")
+        print(f"❌ An unexpected error occurred during filtering: {e}")
         return []
 
     return result
-

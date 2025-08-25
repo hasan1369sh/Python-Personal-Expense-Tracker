@@ -1,16 +1,21 @@
+# finance/storage.py
 import json
 import os
 from .transaction import Transaction
+
 def load_file(self):
     if not os.path.exists(self.filename):
-         self.transactions = []
-         return False
+        print("📭 No transaction data found. Starting with an empty list.")
+        self.transactions = []
+        return False
+
     try:
         with open(self.filename, 'r', encoding='utf-8') as file:
             data = json.load(file)
             self.transactions = [Transaction.from_dict(item) for item in data]
     except (json.JSONDecodeError, FileNotFoundError):
-        print("⚠️  Data file is corrupted or unreadable. Starting with an empty list.")
+        print("⚠️  Unable to read data file — it might be corrupted or in wrong format.")
+        print("🔄 Starting with a fresh list.")
         self.transactions = []
         
 def save_file(self):
@@ -24,5 +29,5 @@ def save_file(self):
                     data.append(transaction)
             json.dump(data, file, ensure_ascii=False, indent=2, default=str)
     except Exception as e:
-        print(f"❌ Error saving file: {e}")
- 
+        print(f"❌ Failed to save data: {e}")
+        print("💡 Check if the file is open in another program or if you have write permission.")
