@@ -26,11 +26,6 @@ python main.py
 "No external packages needed! Just pure Python 🐍"
 
 
-🎮 Screenshot :
-
-پ
-<img width="593" height="505" alt="Screenshot 2025-08-25 223206" src="https://github.com/user-attachments/assets/9b53cbf6-b184-44e4-903b-891ed234a197" />
-
 
 
 
