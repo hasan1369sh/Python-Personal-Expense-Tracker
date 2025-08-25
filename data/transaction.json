@@ -1,0 +1,23 @@
+[
+  {
+    "amount": "20000",
+    "category": "resturant",
+    "date": "2025-08-25",
+    "description": "tester",
+    "type": "expense"
+  },
+  {
+    "amount": "1000200",
+    "category": "asli",
+    "date": "2025-08-25",
+    "description": "test",
+    "type": "income"
+  },
+  {
+    "amount": "2000",
+    "category": "asli1",
+    "date": "2025-08-25",
+    "description": "qwe",
+    "type": "income"
+  }
+]
