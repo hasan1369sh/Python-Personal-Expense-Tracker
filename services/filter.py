@@ -51,38 +51,3 @@ def filtered_item(self, time_frame):
 
     return result
 
-
-
-# def filter(self, time_frame):
-#         today = datetime.datetime.today()
-#         print(today)
-#         result = []
-#         if time_frame == 'today':
-#             for transaction in self.transactions:
-#                 if transaction.date == today:
-#                     result.append(transaction)
-#             return result
-#         elif time_frame == 'current week':
-#             weekday = today.isoweekday()
-#             from_date = today - datetime.datetime.timedelta(weekday)
-#             to_date = today
-#             for transaction in self.transactions:
-#                 if from_date <= transaction.date <= to_date:
-#                     result.append(transaction)
-#             return result
-#         elif time_frame == 'current month':
-#             monthday = today.day
-#             from_date = today - (datetime.datetime.timedelta(monthday) -1)
-#             to_date = today
-#             for transaction in self.transactions:
-#                 if from_date <= transaction.date <= to_date:
-#                     result.append(transaction)
-#             return result
-#         elif time_frame == 'range':
-#             from_date = datetime.datetime.strptime(input('From Date :'))
-#             to_date = datetime.datetime.strptime(input('To Date :'))
-#             for transaction in self.transactions:
-#                 if from_date <= transaction.date <= to_date:
-#                     result.append(transaction)
-#             return result
-    
