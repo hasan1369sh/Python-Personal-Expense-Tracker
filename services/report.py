@@ -1,6 +1,6 @@
 from .filter import filtered_item
-from matplotlib import pyplot as plt
-import numpy as np
+from matplotlib import pyplot as plt # type: ignore
+import numpy as np # type: ignore
 
 
 def get_report(self, time_frame, category_selected):
